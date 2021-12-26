@@ -61,7 +61,7 @@ get_WeatherIcon=(icon, rangeId)=>{
     this.setState({icon:this.weatherIcon.Clear});
     break;
     default:
-    console.log(`Sorry, we are out of ${expr}.`);
+    console.log(`Sorry, we are out of`);
   }
 }
 
