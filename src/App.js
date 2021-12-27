@@ -60,6 +60,8 @@ get_WeatherIcon=(icon, rangeId)=>{
     case rangeId===800:
     this.setState({icon:this.weatherIcon.Clear});
     break;
+    default:
+    console.log(`Sorry, we are out of ${expr}.`);
   }
 }
 
