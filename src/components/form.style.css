@@ -1,4 +1,4 @@
-form{
+form, button{
  margin-top: 3rem;
 }
 
@@ -8,6 +8,7 @@ form input[name="city"],form input[name="country"]{
   background-color: transparent!important;
   border-bottom: 2px solid whitesmoke!important;
   border-radius: 0 !important;
+  caret-color: white;
 
 }
 
@@ -18,4 +19,15 @@ form input:focus{
 
 form input::-webkit-input-placeholder{
   color: white!important;
+}
+
+
+only screen and (min-width: 480px)
+
+# Mobile
+only screen and (min-width: 768px) {
+ form button{
+   margin-top: 2rem;
+ }
+
 }
