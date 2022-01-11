@@ -3,11 +3,12 @@ form{
 }
 
 form input[name="city"],form input[name="country"]{
+    border:none;
+    outline: none;
   background-color: transparent!important;
   border-bottom: 2px solid whitesmoke!important;
   border-radius: 0 !important;
-  border:0!important;
-  border-style: none!important;
+
 }
 
 form input:focus{
