@@ -111,7 +111,7 @@ const
 
   render(){
     return(
-      <div className="App" style={{background:"pink"}}>
+      <div className="App" style={{background:"rgba(0,0,0,0.8)"}}>
        <Form loadWeather={this.getWeather} error={this.state.error}/>
 
      <Weather city={this.state.city}
