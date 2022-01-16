@@ -3,7 +3,7 @@ import './App.css';
 import Weather from './components/weather.component.jsx';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "weather-icons/css/weather-icons.css";
-import React, { useState } from "react";
+import React from "react";
 import Form from "./components/form.component.jsx";
 
 const API_KEY="086d7cb37a600cb49ea24ffb3a2238d3";
