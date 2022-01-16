@@ -3,7 +3,7 @@ import './App.css';
 import Weather from './components/weather.component.jsx';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "weather-icons/css/weather-icons.css";
-import React from "react";
+import React, { useState } from "react";
 import Form from "./components/form.component.jsx";
 
 const API_KEY="086d7cb37a600cb49ea24ffb3a2238d3";
@@ -11,7 +11,9 @@ const API_KEY="086d7cb37a600cb49ea24ffb3a2238d3";
 
 class App extends React.Component{
 
+
    constructor(){
+
      super();
      this.state={
     city:undefined,
@@ -21,8 +23,9 @@ class App extends React.Component{
      description:"",
       icon:undefined,
       celsius:undefined,
-      error:false
+      error:false,
     };
+
 
      this.weatherIcon={
        Thunderstorm:"wi-thunderstorm",
@@ -35,7 +38,9 @@ class App extends React.Component{
      };
    }
 
+
 get_WeatherIcon=(icon, rangeId)=>{
+   console.log(this);
   switch(true){
     case rangeId>=200 && rangeId<=232:
     this.setState({icon:this.weatherIcon.Thunderstorm});
@@ -55,6 +60,10 @@ get_WeatherIcon=(icon, rangeId)=>{
 
     case rangeId>=701 && rangeId<=781:
     this.setState({icon:this.weatherIcon.Atmosphere});
+    break;
+
+    case rangeId>=800:
+    this.setState({icon:this.weatherIcon.Clouds});
     break;
 
     case rangeId===800:
@@ -78,6 +87,7 @@ converToCelsius(temp){
     const country= e.target.elements.country.value;
 
      if(city&& country){
+        this.setState({error:false})
        const api_call= await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`);
 
        const response=await api_call.json();
@@ -85,7 +95,7 @@ converToCelsius(temp){
        console.log(response)
 
        this.setState({
-            city:`${response.name}, ${response.sys.country}`,
+            city:`${response.name}  ${response.sys.country}`,
             max:this.converToCelsius(response.main.temp_max),
             min:this.converToCelsius(response.main.temp_min),
             description:response.weather[0].description,
@@ -97,13 +107,11 @@ converToCelsius(temp){
 
      else{ this.setState({error:true})}
    }
+const
 
   render(){
     return(
-
-
-
-      <div className="App">
+      <div className="App" style={{background:"pink"}}>
        <Form loadWeather={this.getWeather} error={this.state.error}/>
 
      <Weather city={this.state.city}
@@ -112,7 +120,9 @@ converToCelsius(temp){
        min={this.state.min}
        description={this.state.description}
         celsius={this.state.celsius}
-        icon={this.state.icon}/>
+        icon={this.state.icon}
+        />
+
       </div>
     );
   }

@@ -4,20 +4,18 @@ import "./form.style.css";
 const Form=(props)=>{
    return(
      <div className="container">
-     <div>{props.error? error():null}</div>
-      <form onSubmit ={props.loadWeather}>
-       <div className="row">
-         <div className="col-md-3 offset-md-2">
+     <div className="mt-3 mb-4  ">{props.error? error():null}</div>
+      <form onSubmit ={props.loadWeather} >
+       <div className="row ">
+         <div className="  col-5">
              <input type="text" className="form-control"  name="city" autoComplete="off"  placeholder="City"/>
           </div>
 
-          <div className="col-md-3">
-              <input type="text" className="form-control"  name="country" autoComplete="off" placeholder="Country"/>
+          <div className= " col-7">
+              <input type="text" className="form-control"  name="country" autoComplete="off" placeholder="Country"></input>
+            <button type="submit"><i className="fas fa-search "></i></button>
            </div>
 
-           <div className="col-md-3 mt-md-0 text-md-left" >
-               <button className="btn btn-warning">Get</button>
-            </div>
        </div>
        </form>
      </div>
@@ -25,7 +23,7 @@ const Form=(props)=>{
 
 function error(){
   return(
-<span className="alert alert-danger mx-5" role="alert">
+<span className="alert alert-danger" role="alert">
      Please enter city and country
 </span>
 
