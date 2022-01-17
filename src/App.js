@@ -111,8 +111,8 @@ converToCelsius(temp){
 
   render(){
     return(
-      // <div className="App" style={{background:"rgba(0,0,0,0.8)"}}>
-      <div className="App"  style={{backgroundImage:`url(${this.state.backgroundImage})`}}>
+      <div className="App" style={{background:"rgba(0,0,0,0.8)"}}>
+      // <div className="App"  style={{backgroundImage:`url(${this.state.backgroundImage})`}}>
        <Form loadWeather={this.getWeather} error={this.state.error}/>
 
      <Weather city={this.state.city}
