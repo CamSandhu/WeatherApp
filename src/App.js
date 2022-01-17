@@ -108,11 +108,11 @@ converToCelsius(temp){
 
      else{ this.setState({error:true})}
    }
-
+      /* <div className="App"  style={{backgroundImage:`url(${this.state.backgroundImage})`}}>*/
   render(){
     return(
-      <div className="App" style={{background:"rgba(0,0,0,0.8)"}}>
-      // <div className="App"  style={{backgroundImage:`url(${this.state.backgroundImage})`}}>
+      <div className="App" style={{background:'rgba(0,0,0,0.8)'}}>
+
        <Form loadWeather={this.getWeather} error={this.state.error}/>
 
      <Weather city={this.state.city}
@@ -124,10 +124,9 @@ converToCelsius(temp){
         icon={this.state.icon}
         />
 
-      </div>
+     </div>
     );
   }
-
 
   }
 
