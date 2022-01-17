@@ -45,7 +45,9 @@
 }
 
 only screen and (min-width: 480px){
-
+.App{
+  max-width:360px;
+}
 }
 
 # Mobile
